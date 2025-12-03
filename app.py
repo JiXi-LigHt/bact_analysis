@@ -1,21 +1,12 @@
 import streamlit as st
-import pandas as pd
-import numpy as np
-import altair as alt
-import matplotlib.pyplot as plt
-import matplotlib.dates as mdates
 from matplotlib import rcParams
 from streamlit_option_menu import option_menu
-
-from data_analysis.anomaly_detect import VisualResistanceMonitor
-from data_process.data_processer import get_resistance_df, get_count_df
 from page.dashboard import dashboard
-from page.data_management import data_management
 from page.ris_analysis import ris_analysis_page
 from page.trend_analysis import trend_analysis
 
 # ==========================================
-# 0. 基础配置与 CSS 深度定制
+# 基础配置与 CSS 定制
 # ==========================================
 st.set_page_config(
     page_title="耐药菌分析系统",
@@ -156,27 +147,17 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-# ==========================================
-# 1. 模拟数据与逻辑类
-# ==========================================
-
-# 初始化 Session State 中的数据
-if 'main_data' not in st.session_state:
-    st.session_state['main_data'] = pd.DataFrame()
 
 
-# 跳转函数
-def go_to_data_page():
-    selected_page = "Data Management"
-
-
+st.session_state['DB_PATH'] = st.secrets["database"]["path"]
+st.session_state['SRC_TABLE'] = st.secrets["database"]["table"]
 
 
 # ==========================================
-# 2. 侧边栏
+# 侧边栏
 # ==========================================
 with st.sidebar:
-    # 1. Logo 区域
+    # Logo 区域
     st.markdown("""
     <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 20px; padding-left: 5px;">
         <div>
@@ -186,13 +167,11 @@ with st.sidebar:
     </div>
     """, unsafe_allow_html=True)
 
-
-
     # 渲染菜单
     selected_page = option_menu(
         menu_title=None,
-        options=["信息面板", "趋势分析", "数据管理"],
-        icons=["speedometer2", "graph-up-arrow", "database-fill"],
+        options=["信息面板", '耐药分析', "趋势分析"],
+        icons=["speedometer2", "pie-chart", "graph-up-arrow"],
         menu_icon="cast",
         default_index=0,
         orientation="vertical",
@@ -210,13 +189,12 @@ with st.sidebar:
 
 
 # ==========================================
-# 3. 主页面内容
+# 主页面内容
 # ==========================================
 
 if selected_page == "信息面板":
     dashboard()
+elif selected_page == "耐药分析":
     ris_analysis_page()
 elif selected_page == "趋势分析":
     trend_analysis()
-elif selected_page == "数据管理":
-    data_management()

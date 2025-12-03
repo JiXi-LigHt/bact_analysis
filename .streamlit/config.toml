@@ -1,0 +1,7 @@
+[theme]
+# 这是主色调，会同时改变 Primary 按钮和 Multiselect 选中标签的背景色
+primaryColor = "#0D9488"  # 你可以使用任意 Hex 颜色代码，例如截图中的红色
+backgroundColor = "#FFFFFF"
+secondaryBackgroundColor = "#F0F2F6"
+textColor = "#262730"
+font = "sans serif"
