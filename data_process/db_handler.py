@@ -1,6 +1,11 @@
+import sys
+from pathlib import Path
 import pandas as pd
 import sqlite3
 import os
+
+PROJECT_ROOT = Path(__file__).parent.parent
+sys.path.append(str(PROJECT_ROOT))
 
 from data_process.data_processer import extract_hospital_location
 
@@ -70,11 +75,11 @@ def verify_data(db_name, table_name):
 # ==========================================
 if __name__ == "__main__":
     # 定义文件名
-    excel_filename = '../data/whonet6_cleaned.xlsx'
-    db_filename = 'D:/sqlite/db/bact.db'
+    excel_filename = PROJECT_ROOT / 'data' / 'whonet6_cleaned.xlsx'
+    db_filename = PROJECT_ROOT / 'data' / 'bact.db'
     table_name = 'micro_test'
     # 2. 执行转换
-    excel_to_sqlite("../data/whonet6_cleaned.xlsx", db_filename, table_name)
+    excel_to_sqlite(excel_filename, db_filename, table_name)
 
     # 3. 验证结果
     verify_data(db_filename, table_name)
