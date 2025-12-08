@@ -157,4 +157,3 @@ dependencies:
       - simplejson==3.20.2
       - streamlit-echarts==0.4.0
       - wcwidth==0.2.14
-prefix: d:\ProgramData\miniconda3\envs\bact_analysis
