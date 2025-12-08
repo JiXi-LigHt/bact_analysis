@@ -1,5 +1,4 @@
 import streamlit as st
-from matplotlib import rcParams
 from streamlit_option_menu import option_menu
 from page.dashboard import dashboard
 from page.ris_analysis import ris_analysis_page
@@ -14,10 +13,6 @@ st.set_page_config(
     page_icon="🛡️",
     initial_sidebar_state="expanded"
 )
-
-# 设置中文字体
-rcParams['font.sans-serif'] = ['SimHei', 'Microsoft YaHei', 'Arial Unicode MS']
-rcParams['axes.unicode_minus'] = False
 
 st.markdown("""
 <style>

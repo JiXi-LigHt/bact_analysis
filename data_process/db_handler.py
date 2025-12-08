@@ -2,7 +2,6 @@ import sys
 from pathlib import Path
 import pandas as pd
 import sqlite3
-import os
 
 PROJECT_ROOT = Path(__file__).parent.parent
 sys.path.append(str(PROJECT_ROOT))

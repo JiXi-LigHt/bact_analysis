@@ -1,6 +1,5 @@
 import os
 import pandas as pd
-from typing import Optional
 
 
 class DataLoader:

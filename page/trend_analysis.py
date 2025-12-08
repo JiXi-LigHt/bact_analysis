@@ -4,8 +4,6 @@ import streamlit as st
 from streamlit_echarts import st_echarts
 import math
 
-from matplotlib.ticker import MaxNLocator
-
 @st.cache_data(show_spinner="正在从数据库加载元数据...")
 def load_data_from_db(db_path, table_name="micro_test"):
     """

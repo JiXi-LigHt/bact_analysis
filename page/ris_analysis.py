@@ -1,6 +1,6 @@
 import sqlite3
 import pandas as pd
-from data_analysis.ris_analysis import process_ris_data, plot_ris_trend_echarts, process_ris_data_from_db
+from data_analysis.ris_analysis import plot_ris_trend_echarts, process_ris_data_from_db
 import streamlit as st
 
 @st.cache_data(show_spinner="正在从数据库加载元数据...")
