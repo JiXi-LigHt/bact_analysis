@@ -8,9 +8,11 @@
 
 1. 运行 `git clone https://github.com/JiXi-LigHt/bact_analysis.git` 获取项目
 
-2. 打开 `Anaconda Prompt` ，并进入项目根目录
+2. `Windows` 需要打开 `Anaconda Prompt` 才能运行 `conda` 命令。 `Linux `和 `macOS` 需要配置好 `conda` 环境变量。
 
-3. （可选）配置conda源
+3. 进入项目根目录。`Windows` 需要在 `Anaconda Prompt` 中进行全部操作。
+
+4. （可选）配置conda源
 
    ```
    # 1. 恢复默认设置
@@ -27,11 +29,11 @@
    conda config --set show_channel_urls yes
    ```
 
-4. 运行命令 `conda env create -f environment.yml`
+5. 运行命令 `conda env create -f environment.yml`
 
-5. 运行命令 `conda activate bact_analysis`
+6. 运行命令 `conda activate bact_analysis`
 
-6. 将data文件夹中的数据表转为sqlite数据库文件，通过修改`db_handler.py`中下面代码可以自定义读取的数据表文件和存储数据库名、表名、数据库文件存储路径。
+7. 将data文件夹中的数据表转为sqlite数据库文件，通过修改`db_handler.py`中下面代码可以自定义读取的数据表文件和存储数据库名、表名、数据库文件存储路径。
 
    ```python
        # data_process.db_handler.py
@@ -72,4 +74,3 @@
    若已有数据库和表，请提供表的 `schema` ，我可以进行相应的修改以适配目前已有的数据源。
 
    
-
