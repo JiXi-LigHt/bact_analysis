@@ -125,6 +125,7 @@ dependencies:
   - smmap=5.0.2
   - snappy=1.2.2
   - streamlit=1.52.1
+  - streamlit_option_menu=0.4.0
   - tbb=2022.3.0
   - tenacity=9.1.2
   - tk=8.6.13
@@ -148,3 +149,9 @@ dependencies:
   - zipp=3.23.0
   - zlib-ng=2.3.2
   - zstd=1.5.7
+  - pip:
+      - prettytable==3.17.0
+      - pyecharts==2.0.9
+      - simplejson==3.20.2
+      - streamlit-echarts==0.4.0
+      - wcwidth==0.2.14
